@@ -27,6 +27,8 @@ Hacker News 二十年里被不同的人在不同月份反复推荐的论文：�
 
 只放构建好的静态站（`site/`）和每天生成“新鲜”书架的小脚本（`scripts/`）。页面由私有的源码仓库在本机构建后推送过来；GitHub Actions 每天两次抓 Hugging Face 每日论文、HN 上在讨论的 arXiv 论文和几个关注的 arXiv 分类，写成 `site/fresh.json` 再发布。网站不调用任何模型 API。
 
+方法、管线、提示词和网站代码在 [john-liu-dev/open-hackershelf](https://github.com/john-liu-dev/open-hackershelf)。
+
 ## 数据来源与署名
 
 - HN 数据：[open-index/hacker-news](https://huggingface.co/datasets/open-index/hacker-news)（ODC-By 1.0）和 [HN Algolia API](https://hn.algolia.com/api)。HN 原话保留作者名，并链回原评论。

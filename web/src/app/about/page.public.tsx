@@ -6,9 +6,10 @@ import { buildMeta } from "@/lib/catalog";
 export const metadata = { title: "关于", description: "HackerShelf 怎么挑论文和开源书、数据从哪里来、多久更新一次。" };
 
 const AUTHOR_URL = "https://github.com/john-liu-dev";
+const SOURCE_URL = "https://github.com/john-liu-dev/open-hackershelf";
 
 /**
- * 关于页（分享前包装，2026-11-05）：怎么选的（论文、开源书）、更新频率、导读由 Claude 写、数据署名、作者。
+ * 关于页（分享前包装，2026-11-05）：怎么选的（论文、开源书）、更新频率、导读由 Claude 写、数据署名、源码和方法、作者。
  * 不放头像、简介和公司信息。
  */
 export default function AboutPage() {
@@ -72,6 +73,14 @@ export default function AboutPage() {
               <li>被引数和参考文献：OpenAlex（CC0）。</li>
               <li>开源书书单：EbookFoundation/free-programming-books（CC BY 4.0）。</li>
               <li>封面上的图案按论文编号或书的编号生成，不是论文里的图，也不是书的真实封面。</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>源码和方法</h2>
+            <ul>
+              <li>管线、提示词、网站代码和一个月的 demo 都公开在 <a href={SOURCE_URL} className="acct">john-liu-dev/open-hackershelf</a>：怎么从 HN 评论里挑论文和书、怎么用 Claude Code 子 agent 标注、关键数字和局限，都写在 README 里。</li>
+              <li>代码用 MIT 许可，文档和提示词用 CC BY 4.0；不附带数据。</li>
             </ul>
           </section>
 

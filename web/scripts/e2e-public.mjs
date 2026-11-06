@@ -53,6 +53,7 @@ await visit("home", "/", async () => {
   ok(((await page.locator(".home-lede").textContent()) ?? "").includes("反复推荐"), "开场一句话");
   ok((await page.locator('.site-footer a[href="https://github.com/john-liu-dev"]').count()) === 1, "页脚有作者");
   ok((await page.locator('.site-footer a[href="/shelf/about/"]').count()) === 1, "页脚有关于本站");
+  ok((await page.locator('.site-footer a[href="https://github.com/john-liu-dev/open-hackershelf"]').count()) === 1, "页脚有源码和方法");
   // 图标：SVG、apple-touch-icon；robots 仍是 noindex
   const icon = await page.locator('link[rel="icon"][type="image/svg+xml"]').getAttribute("href");
   const apple = await page.locator('link[rel="apple-touch-icon"]').getAttribute("href");
@@ -119,6 +120,7 @@ await visit("paper", "/p/1706.03762/", async () => {
 await visit("about", "/about/", async () => {
   ok((await page.locator("h1").textContent()) === "关于 HackerShelf", "关于页");
   ok((await page.locator('a[href="https://github.com/john-liu-dev"]').count()) >= 1, "作者 GitHub 链接");
+  ok((await page.locator('main a[href="https://github.com/john-liu-dev/open-hackershelf"]').count()) === 1, "关于页有源码和方法");
   ok((await page.locator("img").count()) === 0, "没有头像");
 });
 

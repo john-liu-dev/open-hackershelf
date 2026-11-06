@@ -43,6 +43,7 @@ export function Footer({ cutoff, keys = "/ 搜索 · j k 上下 · g h 首页 ·
             <>
               {" · "}作者 <a href="https://github.com/john-liu-dev" rel="author">john-liu-dev</a>
               {" · "}<Link href="/about">关于本站</Link>
+              {" · "}<a href="https://github.com/john-liu-dev/open-hackershelf">源码和方法</a>
             </>
           )}
         </span>
