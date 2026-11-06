@@ -1,0 +1,12 @@
+# demo：只用一个月的 HN 数据（2023-03，GPT-4 发布的那个月）把整条流程跑一遍。
+# demo/run.sh 会设 HS_CONFIG=demo/config.toml，这里的键按层覆盖 pipeline/config.toml，其余不变。
+
+[hn]
+first_month = "2023-03"
+last_month = "2023-03"
+
+[rules.tiers]
+# 一个月的数据凑不出“3 个不同的月份”，只把月份门槛降到 1；人数门槛不变（主书架 3 人，候选层 2 人）
+core = [3, 1]
+mid = [2, 1]
+cand = [2, 1]

@@ -1,0 +1,81 @@
+# HackerShelf 管线配置。改阈值、限速只改这里；偏离 CLAUDE.md 默认值时在 docs/DECISIONS.md 记一条。
+
+[hn]
+# open-index/hacker-news（ODC-By 1.0）。revision 固定到一个 commit，保证可复现。
+hf_repo = "open-index/hacker-news"
+hf_revision = "c54ced5973b95d80cd934b8921f44ec8d87c3cd1"
+first_month = "2006-10"
+last_month = "2026-08"
+# 下载源：默认 huggingface.co，也可以换成镜像（例如 https://hf-mirror.com）。
+# 文件清单和 sha256 一律取自 huggingface.co 官方 API，每个文件都校验 sha256；用镜像时不符则改从官方重下。
+download_base = "https://huggingface.co"
+official_base = "https://huggingface.co"
+# 本地 parquet 只保留这些列（不要 words / kids / parts / poll）
+columns = ["id", "type", "by", "time", "text", "parent", "url", "title", "score", "descendants", "dead", "deleted"]
+
+[delta]
+# HF 停更之后用 Algolia 补。overlap 区间用来核对两边条数误差（验收 <1%）。
+overlap_start = "2026-08-01"
+overlap_end = "2026-08-21"
+
+[rules]
+# 借鉴 HackerTube 的默认值（CLAUDE.md），可调
+min_own_chars = 100          # 评论者自己的文字（去掉链接和 > 引用后）
+max_mentions_per_item = 20   # 每个条目保留的提及数，优先不同评论者
+score_months_per_person = 2  # 算分时每人最多贡献几个月（防止一个人反复贴同一篇刷分；0 = 不限，即 HackerTube 原公式）
+paper_min_people = 2         # Phase 0 探针后确认
+paper_min_months = 2
+book_min_people = 3
+book_min_months = 3
+
+[rules.tiers]
+# 论文的三档门槛 [人数, 月份]（D9）：core = 主书架，cand = 候选层（界面一律写“被提及”），mid 只做统计。
+# demo 只有一个月的数据，demo/config.toml 把月份都降到 1。
+core = [3, 3]
+mid = [2, 3]
+cand = [2, 2]
+
+[http]
+user_agent = "HackerShelf/0.1 (personal study tool)"
+timeout_s = 60
+max_retries = 5
+# 设置了 HTTPS_PROXY 时，请求都经过这个代理；写在这里的域名改成直连，例如 ["hf-mirror.com", "hn.algolia.com"]
+no_proxy_hosts = []
+
+# 按域名限速：interval_s = 两个请求之间的最小间隔；concurrency = 同时在途的请求数
+[http.rate."export.arxiv.org"]
+interval_s = 3.0
+concurrency = 1
+[http.rate."arxiv.org"]
+interval_s = 3.0
+concurrency = 1
+[http.rate."api.openalex.org"]
+interval_s = 0.1
+concurrency = 4
+[http.rate."openlibrary.org"]
+interval_s = 1.0      # 带 UA+邮箱时可以调到 0.34
+concurrency = 1
+[http.rate."covers.openlibrary.org"]
+interval_s = 1.0
+concurrency = 1
+[http.rate."api.semanticscholar.org"]
+interval_s = 1.0
+concurrency = 1
+[http.rate."hn.algolia.com"]
+interval_s = 0.4      # 非官方上限约 10,000 次/小时/IP
+concurrency = 1
+[http.rate."hacker-news.firebaseio.com"]
+interval_s = 0.02
+concurrency = 8
+[http.rate."huggingface.co"]
+interval_s = 0.25
+concurrency = 8
+[http.rate."hf-mirror.com"]
+interval_s = 0.05
+concurrency = 12
+[http.rate."hackertube.org"]
+interval_s = 1.0
+concurrency = 1
+[http.rate."default"]
+interval_s = 1.0
+concurrency = 2

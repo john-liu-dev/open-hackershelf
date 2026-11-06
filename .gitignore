@@ -1,0 +1,24 @@
+# 这个仓库不附带任何数据：HN 原始数据、缓存、管线产物、模型任务的输入输出、报告都在本地生成，不进 git
+data/
+reports/
+
+# 密钥
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+
+# Node / Next.js
+node_modules/
+web/.next/
+web/.next-public/
+web/next-env.d.ts
+*.tsbuildinfo
+
+.DS_Store

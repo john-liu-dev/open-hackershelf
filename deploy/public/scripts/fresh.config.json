@@ -1,0 +1,10 @@
+{
+  "_说明": "公开站的新鲜书架（scripts/fresh.mjs，GitHub Actions 每天跑）。源码在私有仓库 deploy/public/scripts/，改完重新跑 deploy/public/build.sh 再推送。大分类（cs.LG、cs.CL、cs.AI、cs.CV）每天各上百篇，不整类收：上了 Hugging Face 热门或 HN 的自然会进来。",
+  "categories": ["cs.PL", "cs.DC", "cs.CR"],
+  "announce_types": ["new", "cross"],
+  "hn_window_hours": 36,
+  "hf_limit": 100,
+  "hf_show": 30,
+  "hn_show": 40,
+  "abstract_max": 2000
+}

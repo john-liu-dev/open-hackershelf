@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- HackerShelf 标志（2026-11-05）：深色圆角方块，三本书脊，中间一本金色最高，右边一本微微斜靠，底下一条书架线 -->
+  <rect width="64" height="64" rx="14" fill="#16181d"/>
+  <rect x="13" y="24" width="10" height="26" rx="1.6" fill="#7f8a99"/>
+  <rect x="25" y="12" width="11" height="38" rx="1.6" fill="#f2c14e"/>
+  <rect x="25" y="17" width="11" height="2.2" fill="#16181d" opacity="0.28"/>
+  <rect x="25" y="43" width="11" height="2.2" fill="#16181d" opacity="0.28"/>
+  <rect x="40" y="21" width="10" height="29" rx="1.6" fill="#d8d1c3" transform="rotate(-8 50 50)"/>
+  <rect x="9" y="50" width="46" height="3.2" rx="1.6" fill="#e9e4d9"/>
+</svg>

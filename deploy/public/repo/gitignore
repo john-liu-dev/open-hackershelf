@@ -1,0 +1,3 @@
+# 新鲜书架由 GitHub Actions 每天生成，本机那份只用来预览
+site/fresh.json
+.DS_Store

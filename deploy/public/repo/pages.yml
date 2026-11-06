@@ -1,0 +1,48 @@
+# 公开站发布（HackerShelf Phase 6）：推送 site/ 或每天定时，先生成新鲜书架 site/fresh.json，再发布到 GitHub Pages。
+# 源码在私有仓库，这里只有构建产物（site/）和生成新鲜书架的脚本（scripts/）。
+name: Pages
+# 定时触发的那次，标题写上是哪条 cron，方便核对实际触发时间（私有仓库的 deploy/public/schedule-log.mjs 汇总）
+run-name: ${{ github.event_name == 'schedule' && format('定时 {0}', github.event.schedule) || github.event.head_commit.message || github.event_name }}
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # 每天两次（D47）：北京时间 05:23（UTC 21:23）和 13:41（UTC 05:41）。arXiv 的 RSS 每天北京 13:10 左右才更新，
+    # 第二次是为了当天中午就能看到 arXiv 的新论文。GitHub 的定时任务常会晚几个小时，偶尔漏跑
+    # （2026-11-05：05:23 那次 09:31 才触发，13:41 那次到 19:50 还没触发）。
+    # 公开仓库 60 天没有提交，GitHub 会停掉定时任务。每月的目录更新会带来提交；停了在 Actions 页面点一下就能恢复，
+    # 或者运行 gh workflow enable Pages --repo john-liu-dev/shelf。
+    - cron: "23 21 * * *"
+    - cron: "41 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+      - name: 新鲜书架（只抓元数据，不调用模型；失败时沿用线上那份）
+        run: node scripts/fresh.mjs --site site --prev https://john-liu-dev.github.io/shelf/fresh.json
+      - uses: actions/configure-pages@v6
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v5

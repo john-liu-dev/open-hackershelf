@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>B 藏书 · 首页</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&amp;family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&amp;family=Noto+Serif+SC:wght@500;600;700&amp;family=Noto+Sans+SC:wght@400;500&amp;display=swap">
+<style>
+body{margin:0}
+.hs{--bg:#121316;--bg2:#1a1c20;--bg3:#23262b;--ink:#eeeeec;--ink2:#b4b6bb;--ink3:#8f9298;--rule:#2a2d33;--acc:#e9b949;--acct:#e9b949;--onacc:#16171a;--shelf:#2c2f35;--shadow:rgba(0,0,0,0.75)}
+.hs.lt{--bg:#f2f2f0;--bg2:#ffffff;--bg3:#e7e7e4;--ink:#16171a;--ink2:#4d5057;--ink3:#62656c;--rule:#dcdcd8;--acc:#d9a63a;--acct:#7d5a0b;--onacc:#16171a;--shelf:#d3d1cb;--shadow:rgba(40,30,10,0.35)}
+a{color:inherit;text-decoration:none}
+a:hover{color:var(--acct)}
+button{font:inherit;cursor:pointer}
+input::placeholder{color:var(--ink3)}
+</style>
+</helmet>
+<div class="hs {{mode}}" style="min-height: 2450px; background: var(--bg); color: var(--ink); font-family: 'DM Sans', 'Noto Sans SC', system-ui, sans-serif">
+
+  <header style="max-width: 1280px; margin: 0 auto; padding: 22px 48px; box-sizing: border-box; display: flex; align-items: center; gap: 40px; flex-wrap: wrap">
+    <a href="#" style="font-family: 'Fraunces', serif; font-size: 27px; font-weight: 600; letter-spacing: -0.01em">HackerShelf</a>
+    <nav aria-label="主导航" style="display: flex; gap: 28px; font-size: 15px; flex-grow: 1; flex-wrap: wrap">
+      <a href="#" style="color: var(--ink)">论文</a>
+      <a href="#" style="color: var(--ink2)">浏览</a>
+      <a href="#" style="color: var(--ink2)">我的书架</a>
+      <span style="color: var(--ink3)">图书 · 即将上架</span>
+    </nav>
+    <label style="display: flex; align-items: center; gap: 10px; width: 320px; max-width: 100%; padding: 11px 14px; background: var(--bg2); border-radius: 6px; font-size: 14px; color: var(--ink3); box-sizing: border-box">
+      <svg viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; flex-shrink: 0" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg>
+      <input type="search" aria-label="搜索论文" placeholder="搜索标题、作者、主题" style="border: 0; background: transparent; color: var(--ink); font: inherit; flex-grow: 1; min-width: 0; outline: none">
+      <kbd style="font: 12px/1 'DM Sans', sans-serif; padding: 4px 7px; border-radius: 4px; box-shadow: inset 0 0 0 1px var(--rule); color: var(--ink2)">/</kbd>
+    </label>
+  </header>
+
+  <section style="max-width: 1280px; margin: 0 auto; padding: 56px 48px 0; box-sizing: border-box; display: flex; flex-direction: column; gap: 40px">
+    <div style="display: flex; align-items: baseline; gap: 24px; flex-wrap: wrap">
+      <h1 style="margin: 0; font-family: 'Fraunces', 'Noto Serif SC', serif; font-weight: 600; font-size: 64px; line-height: 1">长青榜</h1>
+      <span style="font-size: 16px; color: var(--ink2)">主书架 1,799 篇 · 按有推荐的不同月份数排序 · 截至 2026-11-01</span>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 64px; align-items: center">
+      <div style="flex: 0 0 300px; max-width: 100%">
+        <div style="position: relative; aspect-ratio: 2 / 3; background: {{top.bg}}; overflow: hidden; container-type: inline-size; border-radius: 2px 6px 6px 2px; box-shadow: 0 30px 50px -24px var(--shadow)">
+          <svg viewBox="0 0 200 300" preserveAspectRatio="xMidYMid slice" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block" aria-hidden="true">
+            <path d="{{top.p}}" style="fill: none; stroke: rgba(255,255,255,0.3); stroke-width: 1.1"></path>
+            <path d="{{top.f}}" style="fill: rgba(255,255,255,0.2)"></path>
+            <path d="{{top.q}}" style="fill: #f2c14e"></path>
+          </svg>
+          <div style="position: absolute; left: 0; right: 0; top: 0; padding: 9cqw 9cqw 6cqw; background: {{top.bg}}; display: flex; flex-direction: column; gap: 3cqw">
+            <div style="font: 500 4.6cqw/1.2 'Noto Sans SC', sans-serif; color: rgba(255,255,255,0.72)">{{top.areaZh}}</div>
+            <div style="font-family: 'Fraunces', serif; font-weight: 600; font-size: {{top.ts}}cqw; line-height: 1.05; color: #ffffff">{{top.main}}</div>
+          </div>
+          <div style="position: absolute; left: 0; right: 0; bottom: 0; padding: 5cqw 9cqw 8cqw; background: {{top.bg}}; display: flex; justify-content: space-between; align-items: baseline; gap: 3cqw">
+            <div style="font: 500 5.4cqw/1.3 'Noto Serif SC', serif; color: rgba(255,255,255,0.9)">{{top.zhMain}}</div>
+            <div style="font: 4.6cqw/1 'DM Sans', sans-serif; color: rgba(255,255,255,0.7)">{{top.year}}</div>
+          </div>
+          <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 4cqw; background: linear-gradient(90deg, rgba(0,0,0,0.3), rgba(255,255,255,0.08) 60%, transparent)"></div>
+        </div>
+      </div>
+      <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 18px; max-width: 640px">
+        <div style="font-size: 13px; letter-spacing: 0.14em; color: var(--acct); font-weight: 600">No.1 · 数学、逻辑与理论 · 1994</div>
+        <h2 style="margin: 0; font-family: 'Fraunces', serif; font-weight: 600; font-size: 50px; line-height: 1.05; letter-spacing: -0.015em">On proof and progress in mathematics</h2>
+        <div style="font-family: 'Noto Serif SC', serif; font-size: 22px; font-weight: 500; color: var(--ink2)">论数学中的证明与进步 · William P. Thurston</div>
+        <p style="margin: 0; font-size: 17px; line-height: 1.8; color: var(--ink2)">数学的进步不只靠形式证明，更在于人与人之间的理解。</p>
+        <blockquote style="margin: 6px 0 0; display: flex; flex-direction: column; gap: 8px">
+          <div style="font-family: 'Fraunces', serif; font-style: italic; font-size: 23px; line-height: 1.45">“I highly recommend Bill Thurston's gem of an article…”</div>
+          <div style="font-size: 13px; color: var(--ink3)">ssivark · 2020 年 6 月 · HN 评论</div>
+        </blockquote>
+        <div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-top: 4px">
+          <span style="font-size: 13px; padding: 5px 11px; border-radius: 999px; box-shadow: inset 0 0 0 1px var(--acc); color: var(--acct)">被推荐 · 39 人</span>
+          <span style="font-size: 14px; color: var(--ink2)">29 个月 · 41 个讨论串</span>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px">
+          <a href="#" style="font-size: 15px; font-weight: 500; padding: 13px 24px; border-radius: 6px; background: var(--acc); color: var(--onacc)">开始阅读</a>
+          <a href="#" style="font-size: 15px; padding: 13px 24px; border-radius: 6px; box-shadow: inset 0 0 0 1px var(--rule)">放进稍后读</a>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; margin-top: 24px">
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(150px, 100%), 1fr)); gap: 28px; align-items: end; padding: 0 12px">
+        <sc-for list="{{shelf}}" as="cv" hint-placeholder-count="6">
+          <a href="#" style="display: flex; flex-direction: column; gap: 14px">
+            <div style="position: relative; aspect-ratio: 2 / 3; background: {{cv.bg}}; overflow: hidden; container-type: inline-size; border-radius: 2px 5px 5px 2px; box-shadow: 0 22px 34px -20px var(--shadow)">
+              <svg viewBox="0 0 200 300" preserveAspectRatio="xMidYMid slice" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block" aria-hidden="true">
+                <path d="{{cv.p}}" style="fill: none; stroke: rgba(255,255,255,0.3); stroke-width: 1.1"></path>
+                <path d="{{cv.f}}" style="fill: rgba(255,255,255,0.2)"></path>
+                <path d="{{cv.q}}" style="fill: #f2c14e"></path>
+              </svg>
+              <div style="position: absolute; left: 0; right: 0; top: 0; padding: 9cqw 9cqw 6cqw; background: {{cv.bg}}; display: flex; flex-direction: column; gap: 3cqw">
+                <div style="font: 500 5cqw/1.2 'Noto Sans SC', sans-serif; color: rgba(255,255,255,0.72)">{{cv.areaZh}}</div>
+                <div style="font-family: 'Fraunces', serif; font-weight: 600; font-size: {{cv.ts}}cqw; line-height: 1.05; color: #ffffff">{{cv.main}}</div>
+              </div>
+              <div style="position: absolute; left: 0; right: 0; bottom: 0; padding: 5cqw 9cqw 8cqw; background: {{cv.bg}}; display: flex; justify-content: space-between; align-items: baseline; gap: 3cqw">
+                <div style="font: 500 6cqw/1.3 'Noto Serif SC', serif; color: rgba(255,255,255,0.9)">{{cv.zhMain}}</div>
+                <div style="font: 5cqw/1 'DM Sans', sans-serif; color: rgba(255,255,255,0.7)">{{cv.year}}</div>
+              </div>
+              <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 4cqw; background: linear-gradient(90deg, rgba(0,0,0,0.3), rgba(255,255,255,0.08) 60%, transparent)"></div>
+            </div>
+          </a>
+        </sc-for>
+      </div>
+      <div style="height: 14px; background: var(--shelf); border-radius: 2px; box-shadow: 0 12px 20px -10px var(--shadow)"></div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(150px, 100%), 1fr)); gap: 28px; padding: 14px 12px 0">
+        <sc-for list="{{shelf}}" as="cv" hint-placeholder-count="6">
+          <div style="display: flex; flex-direction: column; gap: 4px">
+            <span style="font-family: 'Fraunces', serif; font-size: 22px; color: var(--ink2)">{{cv.rank}}</span>
+            <span style="font-size: 13px; color: var(--ink3)">{{cv.label}} · {{cv.people}} 人</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <sc-for list="{{areas}}" as="ar" hint-placeholder-count="2">
+    <section style="max-width: 1280px; margin: 0 auto; padding: 96px 48px 0; box-sizing: border-box; display: flex; flex-direction: column; gap: 26px">
+      <div style="display: flex; align-items: baseline; gap: 18px; flex-wrap: wrap">
+        <h2 style="margin: 0; font-family: 'Noto Serif SC', serif; font-size: 28px; font-weight: 600">{{ar.zh}}</h2>
+        <span style="font-size: 14px; color: var(--ink3); flex-grow: 1">主书架 {{ar.n}} 篇</span>
+        <a href="#" style="font-size: 14px; color: var(--acct)">整面书架 →</a>
+      </div>
+      <div style="display: flex; flex-direction: column">
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(128px, 100%), 1fr)); gap: 24px; align-items: end; padding: 0 12px">
+          <sc-for list="{{ar.items}}" as="cv" hint-placeholder-count="7">
+            <a href="#" style="display: block">
+              <div style="position: relative; aspect-ratio: 2 / 3; background: {{cv.bg}}; overflow: hidden; container-type: inline-size; border-radius: 2px 5px 5px 2px; box-shadow: 0 20px 30px -18px var(--shadow)">
+                <svg viewBox="0 0 200 300" preserveAspectRatio="xMidYMid slice" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block" aria-hidden="true">
+                  <path d="{{cv.p}}" style="fill: none; stroke: rgba(255,255,255,0.3); stroke-width: 1.1"></path>
+                  <path d="{{cv.f}}" style="fill: rgba(255,255,255,0.2)"></path>
+                  <path d="{{cv.q}}" style="fill: #f2c14e"></path>
+                </svg>
+                <div style="position: absolute; left: 0; right: 0; top: 0; padding: 9cqw 9cqw 6cqw; background: {{cv.bg}}; display: flex; flex-direction: column; gap: 3cqw">
+                  <div style="font: 500 5.4cqw/1.2 'Noto Sans SC', sans-serif; color: rgba(255,255,255,0.72)">{{cv.areaZh}}</div>
+                  <div style="font-family: 'Fraunces', serif; font-weight: 600; font-size: {{cv.ts}}cqw; line-height: 1.05; color: #ffffff">{{cv.main}}</div>
+                </div>
+                <div style="position: absolute; left: 0; right: 0; bottom: 0; padding: 5cqw 9cqw 8cqw; background: {{cv.bg}}; display: flex; justify-content: space-between; align-items: baseline; gap: 3cqw">
+                  <div style="font: 500 6.4cqw/1.3 'Noto Serif SC', serif; color: rgba(255,255,255,0.9)">{{cv.zhMain}}</div>
+                  <div style="font: 5.4cqw/1 'DM Sans', sans-serif; color: rgba(255,255,255,0.7)">{{cv.year}}</div>
+                </div>
+                <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 4cqw; background: linear-gradient(90deg, rgba(0,0,0,0.3), rgba(255,255,255,0.08) 60%, transparent)"></div>
+              </div>
+            </a>
+          </sc-for>
+        </div>
+        <div style="height: 12px; background: var(--shelf); border-radius: 2px; box-shadow: 0 12px 20px -10px var(--shadow)"></div>
+      </div>
+    </section>
+  </sc-for>
+
+  <section style="max-width: 1280px; margin: 0 auto; padding: 96px 48px 0; box-sizing: border-box; display: flex; flex-direction: column; gap: 26px">
+    <div style="display: flex; align-items: baseline; gap: 18px; flex-wrap: wrap">
+      <h2 style="margin: 0; font-family: 'Noto Serif SC', serif; font-size: 28px; font-weight: 600">最近被提起</h2>
+      <span style="font-size: 14px; color: var(--ink3)">过去 7 天在 HN 上出现过</span>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); gap: 28px 40px">
+      <sc-for list="{{recent}}" as="cv" hint-placeholder-count="6">
+        <a href="#" style="display: grid; grid-template-columns: 84px minmax(0, 1fr); gap: 18px; align-items: start">
+          <div style="position: relative; aspect-ratio: 2 / 3; background: {{cv.bg}}; overflow: hidden; container-type: inline-size; border-radius: 2px 4px 4px 2px; box-shadow: 0 14px 22px -14px var(--shadow)">
+            <svg viewBox="0 0 200 300" preserveAspectRatio="xMidYMid slice" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block" aria-hidden="true">
+              <path d="{{cv.p}}" style="fill: none; stroke: rgba(255,255,255,0.3); stroke-width: 1.1"></path>
+              <path d="{{cv.f}}" style="fill: rgba(255,255,255,0.2)"></path>
+              <path d="{{cv.q}}" style="fill: #f2c14e"></path>
+            </svg>
+            <div style="position: absolute; left: 0; right: 0; top: 0; padding: 10cqw 10cqw 6cqw; background: {{cv.bg}}">
+              <div style="font-family: 'Fraunces', serif; font-weight: 600; font-size: {{cv.ts}}cqw; line-height: 1.05; color: #ffffff">{{cv.main}}</div>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 6px; padding-top: 2px">
+            <span style="font-size: 12px; color: var(--ink3)">{{cv.date}} · {{cv.areaZh}}</span>
+            <span style="font-family: 'Fraunces', serif; font-size: 19px; line-height: 1.25">{{cv.main}}</span>
+            <span style="font-family: 'Noto Serif SC', serif; font-size: 14px; color: var(--ink2)">{{cv.zhMain}}</span>
+            <span style="font-size: 13px; color: var(--ink3)">{{cv.label}} · {{cv.people}} 人</span>
+          </div>
+        </a>
+      </sc-for>
+    </div>
+  </section>
+
+  <footer style="max-width: 1280px; margin: 0 auto; padding: 96px 48px 48px; box-sizing: border-box">
+    <div style="border-top: 1px solid var(--rule); padding-top: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-size: 13px; color: var(--ink3)">
+      <span>HN 数据来自 open-index/hacker-news（ODC-By 1.0）和 HN Algolia API · 封面由论文编号生成</span>
+      <span>/ 搜索 · j k 上下 · g h 首页 · ? 帮助</span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"dark":{"editor":"boolean","default":true},"$preview":{"width":1440,"height":2450}}'>
+class Component extends DCLogic {
+  cover(id, area, title, zh, year, areaZh) {
+    const AC = { llm: '#2c4a7a', ml: '#1d6b66', physics: '#5a3d8a', perception: '#a84b2a', 'ai-safety': '#7f2d3c', math: '#23493c', security: '#3a3c42', 'rl-agents': '#8f6516', systems: '#2b5c86', society: '#6e5238', space: '#1c2846', pl: '#6a2e66', se: '#3d6a2c', algo: '#9c3a2b' };
+    let h = 2166136261;
+    for (let i = 0; i < id.length; i++) { h ^= id.charCodeAt(i); h = Math.imul(h, 16777619); }
+    h >>>= 0;
+    let s = h || 7;
+    const r = () => { s ^= s << 13; s >>>= 0; s ^= s >>> 17; s ^= s << 5; s >>>= 0; return (s % 10000) / 10000; };
+    const f1 = (n) => Math.round(n * 10) / 10;
+    const circ = (cx, cy, rr) => 'M' + f1(cx - rr) + ' ' + f1(cy) + 'a' + f1(rr) + ' ' + f1(rr) + ' 0 1 0 ' + f1(2 * rr) + ' 0a' + f1(rr) + ' ' + f1(rr) + ' 0 1 0 ' + f1(-2 * rr) + ' 0';
+    const k = h % 5;
+    let p = 'M0 0', f = 'M0 0', q = 'M0 0';
+    if (k === 0) {
+      const cx = 30 + r() * 140, cy = 200 + r() * 60; p = '';
+      for (let i = 1; i < 13; i++) p += circ(cx, cy, i * 16);
+      q = circ(cx + 48 * (r() < 0.5 ? 1 : -1), cy - 10, 10 + r() * 6);
+    } else if (k === 1) {
+      const sl = (r() - 0.5) * 1.4; p = '';
+      for (let i = -14; i < 26; i++) { const x = i * 12; p += 'M' + x + ' 100L' + f1(x + sl * 200) + ' 300'; }
+      q = 'M0 ' + f1(190 + r() * 50) + 'h200v12h-200z';
+    } else if (k === 2) {
+      f = ''; q = '';
+      for (let yy = 0; yy < 9; yy++) for (let xx = 0; xx < 8; xx++) { const big = r() < 0.1; const str = circ(16 + xx * 24, 116 + yy * 19, big ? 5.5 : 1.8); if (big) q += str; else f += str; }
+      if (!q) q = circ(112, 172, 5.5);
+    } else if (k === 3) {
+      f = ''; let y = 100;
+      while (y < 300) { const t = 1 + r() * 7; f += 'M0 ' + f1(y) + 'h200v' + f1(t) + 'h-200z'; y += t + 4 + r() * 12; }
+      q = 'M0 ' + f1(160 + r() * 70) + 'h200v16h-200z';
+    } else {
+      p = '';
+      for (let j = 0; j < 10; j++) { const y0 = 120 + j * 16, A = 4 + r() * 9, L = 24 + r() * 36, ph = r() * 6; let d = 'M0 ' + f1(y0); for (let x = 10; x <= 200; x += 10) d += 'L' + x + ' ' + f1(y0 + A * Math.sin(x / L + ph)); p += d; }
+      q = circ(140 + r() * 30, 150 + r() * 30, 15);
+    }
+    const main = title.split(/:\s+/)[0];
+    const len = main.length;
+    const ts = len <= 18 ? 12.5 : len <= 30 ? 10.5 : len <= 46 ? 8.6 : 7.2;
+    return { bg: AC[area] || '#333333', p, f, q, ts, main, zhMain: zh.split('：')[0], year, areaZh };
+  }
+  renderVals() {
+    const dark = this.props.dark ?? true;
+    const AZ = { llm: '大模型与语言模型', ml: '机器学习与深度学习', physics: '物理与量子', perception: '视觉、语音与图像生成', 'ai-safety': 'AI 安全、伦理与社会影响', math: '数学、逻辑与理论', security: '安全、隐私与密码学', space: '天文、太空与生命', algo: '算法与数据结构' };
+    const mk = (row, extra) => Object.assign(this.cover(row[0], row[1], row[2], row[3], row[4], AZ[row[1]]), extra || {});
+    const shelf = [
+      ['arxiv:1706.03762', 'llm', 'Attention Is All You Need', '注意力就是你所需要的一切', 2017, 'No.2', '被推荐', 93],
+      ['arxiv:1911.01547', 'ai-safety', 'On the Measure of Intelligence', '论智能的度量', 2019, 'No.3', '被推荐', 35],
+      ['arxiv:2005.14165', 'llm', 'Language Models are Few-Shot Learners', '语言模型是少样本学习者', 2020, 'No.4', '被推荐', 72],
+      ['arxiv:1803.05316', 'math', 'Seven Sketches in Compositionality: An Invitation to Applied Category Theory', '组合性七篇素描：应用范畴论邀请', 2018, 'No.5', '被推荐', 25],
+      ['arxiv:1806.02404', 'space', 'Dissolving the Fermi Paradox', '消解费米悖论', 2018, 'No.6', '被推荐', 36],
+      ['arxiv:cs/0011047', 'algo', 'Dancing links', '舞蹈链', 2000, 'No.7', '被推荐', 14]
+    ].map((r) => mk(r, { rank: r[5], label: r[6], people: r[7] }));
+    const llm = [
+      ['arxiv:1706.03762', 'llm', 'Attention Is All You Need', '注意力就是你所需要的一切', 2017],
+      ['arxiv:2005.14165', 'llm', 'Language Models are Few-Shot Learners', '语言模型是少样本学习者', 2020],
+      ['arxiv:2207.09238', 'llm', 'Formal Algorithms for Transformers', 'Transformer 的形式化算法', 2022],
+      ['arxiv:2303.12712', 'llm', 'Sparks of Artificial General Intelligence: Early experiments with GPT-4', '通用人工智能的火花：GPT-4 的早期实验', 2023],
+      ['arxiv:2001.08361', 'llm', 'Scaling Laws for Neural Language Models', '神经语言模型的缩放定律', 2020],
+      ['arxiv:1301.3781', 'llm', 'Efficient Estimation of Word Representations in Vector Space', '向量空间中词表示的高效估计', 2013],
+      ['arxiv:2106.09685', 'llm', 'LoRA: Low-Rank Adaptation of Large Language Models', 'LoRA：大语言模型的低秩适配', 2021]
+    ].map((r) => mk(r));
+    const math = [
+      ['arxiv:math/9404236', 'math', 'On proof and progress in mathematics', '论数学中的证明与进步', 1994],
+      ['arxiv:1803.05316', 'math', 'Seven Sketches in Compositionality: An Invitation to Applied Category Theory', '组合性七篇素描：应用范畴论邀请', 2018],
+      ['arxiv:math/0404335', 'math', 'Meta Math! The Quest for Omega', '元数学！寻找 Omega', 2004],
+      ['arxiv:1212.6543', 'math', 'Rethinking set theory', '重新思考集合论', 2012],
+      ['arxiv:1809.05923', 'math', 'What is Applied Category Theory?', '什么是应用范畴论？', 2018],
+      ['arxiv:math/0411418', 'math', 'How real are real numbers?', '实数有多「真实」？', 2004],
+      ['arxiv:math/0305282', 'math', 'A Universal Approach to Self-Referential Paradoxes, Incompleteness and Fixed Points', '自指悖论、不完备性与不动点的通用处理', 2003]
+    ].map((r) => mk(r));
+    const recent = [
+      ['arxiv:2606.12683', 'ai-safety', 'From AGI to ASI', '从 AGI 到 ASI', 2026, '11-01', '被提及', 7],
+      ['arxiv:2410.13722', 'ai-safety', 'Persistent Pre-Training Poisoning of LLMs', 'LLM 的持久性预训练投毒', 2024, '11-01', '被提及', 4],
+      ['arxiv:1804.04014', 'security', 'PowerHammer: Exfiltrating Data from Air-Gapped Computers through Power Lines', 'PowerHammer：通过电力线从物理隔离计算机中窃取数据', 2018, '11-01', '被提及', 4],
+      ['arxiv:2409.02292', 'security', 'RAMBO: Leaking Secrets from Air-Gap Computers by Spelling Covert Radio Signals from Computer RAM', 'RAMBO：用内存产生的隐蔽无线电信号从物理隔离计算机中窃取机密', 2024, '11-01', '被提及', 4],
+      ['arxiv:1512.03385', 'perception', 'Deep Residual Learning for Image Recognition', '用于图像识别的深度残差学习', 2015, '10-30', '被推荐', 21],
+      ['arxiv:1410.5401', 'ml', 'Neural Turing Machines', '神经图灵机', 2014, '10-30', '被推荐', 30]
+    ].map((r) => mk(r, { date: r[5], label: r[6], people: r[7] }));
+    return {
+      mode: dark ? '' : 'lt',
+      top: mk(['arxiv:math/9404236', 'math', 'On proof and progress in mathematics', '论数学中的证明与进步', 1994]),
+      shelf,
+      areas: [{ zh: '大模型与语言模型', n: 446, items: llm }, { zh: '数学、逻辑与理论', n: 103, items: math }],
+      recent
+    };
+  }
+}
+</script>
+</body>
+</html>

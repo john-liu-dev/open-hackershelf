@@ -1,0 +1,129 @@
+# Phase 5（D48）手选名单：free-programming-books 里没有的开源书和官方免费书，以及要补官方新域名、常用简称的书。
+# 和书单里的同一本书（标题相同）会合并：链接、简称加进去，许可证以这里为准。
+# license 只在有把握时写（SPDX 写法）；没写的，进主书架后再逐本到官方页面核实。aliases 留给以后按书名匹配评论用。
+
+[[book]]
+title = "Structure and Interpretation of Computer Programs"
+authors = "Harold Abelson, Gerald Jay Sussman, Julie Sussman"
+# mitpress.mit.edu/sicp/ 是 2016 年以前 MIT Press 的官方全文地址，HN 上的链接大多指向它（11-05 晚补）
+urls = ["https://mitpress.mit.edu/sites/default/files/sicp/index.html", "https://mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/6515/sicp.zip/index.html", "http://mitpress.mit.edu/sicp/"]
+license = "CC-BY-SA-4.0"
+aliases = ["SICP"]
+
+[[book]]
+title = "Operating Systems: Three Easy Pieces"
+authors = "Remzi H. Arpaci-Dusseau, Andrea C. Arpaci-Dusseau"
+urls = ["https://ostep.org/"]
+aliases = ["OSTEP"]
+
+[[book]]
+title = "Pro Git"
+authors = "Scott Chacon, Ben Straub"
+urls = ["https://git-scm.com/book"]
+
+[[book]]
+title = "The Elements of Statistical Learning"
+authors = "Trevor Hastie, Robert Tibshirani, Jerome Friedman"
+urls = ["https://hastie.su.domains/ElemStatLearn/", "https://web.stanford.edu/~hastie/ElemStatLearn/"]
+aliases = ["ESL", "ESLII"]
+section = "Machine Learning"
+
+[[book]]
+title = "Information Theory, Inference, and Learning Algorithms"
+authors = "David J. C. MacKay"
+# inference.phy.cam.ac.uk 是作者在剑桥时的官方地址，现在跳到 inference.org.uk（11-05 晚补）
+urls = ["https://www.inference.org.uk/itila/book.html", "http://www.inference.org.uk/mackay/itila/", "http://www.inference.phy.cam.ac.uk/itila/", "http://www.inference.phy.cam.ac.uk/mackay/itila/"]
+aliases = ["ITILA"]
+section = "Machine Learning"
+
+[[book]]
+title = "Convex Optimization"
+authors = "Stephen Boyd, Lieven Vandenberghe"
+urls = ["https://web.stanford.edu/~boyd/cvxbook/", "https://stanford.edu/~boyd/cvxbook/"]
+section = "Mathematics"
+
+[[book]]
+title = "Software Foundations"
+authors = "Benjamin C. Pierce et al."
+urls = ["https://softwarefoundations.cis.upenn.edu/"]
+section = "Theoretical Computer Science"
+
+[[book]]
+title = "Mining of Massive Datasets"
+authors = "Jure Leskovec, Anand Rajaraman, Jeffrey D. Ullman"
+urls = ["http://www.mmds.org/"]
+section = "Data Science"
+
+[[book]]
+title = "Advanced R"
+authors = "Hadley Wickham"
+urls = ["https://adv-r.hadley.nz/", "http://adv-r.had.co.nz/"]
+section = "R"
+
+[[book]]
+title = "R for Data Science"
+authors = "Hadley Wickham, Mine Çetinkaya-Rundel, Garrett Grolemund"
+urls = ["https://r4ds.had.co.nz/"]
+aliases = ["R4DS"]
+
+[[book]]
+title = "Let's Build a Compiler"
+authors = "Jack Crenshaw"
+urls = ["https://compilers.iecc.com/crenshaw/"]
+section = "Compiler Design"
+
+[[book]]
+title = "Deep Learning: Foundations and Concepts"
+authors = "Christopher M. Bishop, Hugh Bishop"
+urls = ["https://www.bishopbook.com/"]
+section = "Machine Learning"
+
+[[book]]
+title = "Understanding Deep Learning"
+authors = "Simon J. D. Prince"
+urls = ["https://udlbook.github.io/udlbook/"]
+section = "Machine Learning"
+
+[[book]]
+title = "High Performance Browser Networking"
+authors = "Ilya Grigorik"
+urls = ["https://hpbn.co/"]
+section = "Networking"
+
+[[book]]
+title = "The Feynman Lectures on Physics"
+authors = "Richard P. Feynman, Robert B. Leighton, Matthew Sands"
+urls = ["https://www.feynmanlectures.caltech.edu/"]
+aliases = ["Feynman Lectures"]
+section = "Physics"
+
+[[book]]
+title = "The Book of Shaders"
+authors = "Patricio Gonzalez Vivo, Jen Lowe"
+urls = ["https://thebookofshaders.com/"]
+section = "Graphics Programming"
+
+[[book]]
+title = "Bayesian Data Analysis"
+authors = "Andrew Gelman, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari, Donald B. Rubin"
+urls = ["http://www.stat.columbia.edu/~gelman/book/"]
+aliases = ["BDA3"]
+section = "Statistics"
+
+[[book]]
+title = "Causal Inference: What If"
+authors = "Miguel A. Hernán, James M. Robins"
+urls = ["https://miguelhernan.org/whatifbook"]
+section = "Statistics"
+
+[[book]]
+title = "Causal Inference: The Mixtape"
+authors = "Scott Cunningham"
+urls = ["https://mixtape.scunning.com/"]
+section = "Statistics"
+
+# Rust 官方的另外几个地址（stable、nightly 版本和 2016–2018 年第二版草稿的 GitHub Pages），和书单里的同一本书合并（11-05 晚补）
+[[book]]
+title = "The Rust Programming Language"
+authors = "Steve Klabnik, Carol Nichols, Chris Krycho"
+urls = ["https://doc.rust-lang.org/stable/book/", "https://doc.rust-lang.org/nightly/book/", "https://rust-lang.github.io/book/"]
